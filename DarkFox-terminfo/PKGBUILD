@@ -1,0 +1,15 @@
+# Maintainer: James McGlashan (DarkFox) <archeydevil@gmail.com>
+pkgname=DarkFox-terminfo
+pkgver=1
+pkgrel=1
+pkgdesc='Terminfo file for multiple terminals.'
+arch=(any)
+license=(BSD)
+source=('http://darkfox.hackerhaven.net/exploits/terminfo/terminfo.tar.xz')
+md5sums=(f126501e223ed32bece9dafc299d04c3)
+
+build() {
+  cd $srcdir/terminfo
+  install -Dm 644 -d $pkgdir/usr/share/terminfo
+  cp -a * $pkgdir/usr/share/terminfo
+}
